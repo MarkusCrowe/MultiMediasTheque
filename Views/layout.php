@@ -11,11 +11,11 @@
 </head>
 <body>
     <?php require "Views/Templates/header.php"; ?>
-        <main>
-            <section>
-                <?php require getRoute(); ?>
-            </section>     
-        </main>
+    <main>
+        <section>
+            <?php require getRoute(); ?>
+        </section>     
+    </main>
     <?php require "Views/Templates/footer.php"; ?>
 </body>
 </html>
