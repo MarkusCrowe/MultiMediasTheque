@@ -73,7 +73,8 @@ header section div{
     flex-direction: column;
     padding: 0.2em 0.4em;
     border: 1px solid black;
-    border-radius: 3px;   
+    border-radius: 3px; 
+    z-index: 3;  
 }
 header section div a{
     color: rgb(74, 67, 106);
@@ -155,8 +156,10 @@ footer p a{
 /****************************************************/
 article{
     background-color: rgb(172, 172, 245);
-    padding: 1.5em;
+    /* padding: 1.5em 1.5em 0 1.5em; */
     position: relative;
+    height: 100%;
+    display: flex;
 }
 article form{
     display: flex;
