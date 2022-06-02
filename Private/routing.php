@@ -4,9 +4,9 @@
         "register" => "add_users_controller.php",
         "login" => "login_controller.php",
         // "account" => "account_controller.php",
-        // "category" => "add_category_controller.php",
-        // "chatroom" => "add_chatroom_controller.php",
-        // "chats" => "add_chats_controller.php",
+        "category" => "add_category_controller.php",
+        "chatroom" => "add_chatroom_controller.php",
+        "chats" => "add_chats_controller.php",
     ];
 
     function getRoute(): string {

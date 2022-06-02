@@ -20,7 +20,10 @@
                     echo "Wrong Pseudo or Password";
                 }
             }
-        }       
+        } 
+        else{
+            echo "Wrong Pseudo or Password";
+        }      
     }    
     require "Views/login.php";
 ?>

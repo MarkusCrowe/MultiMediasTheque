@@ -7,11 +7,13 @@
     <title>MultiMédiasThèque</title>
     <link rel="stylesheet" href="Assets/Style/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <!-- <script src="Assets/JS/navigation_button.js"></script> -->
+    <script src="Assets/JS/account_menu.js"></script>
+    <script src="Assets/JS/navigation_button.js"></script>
 </head>
 <body>
     <?php require "Views/Templates/header.php"; ?>
     <main>
+        <?php require "Views/navigation.php"; ?>
         <section>
             <?php require getRoute(); ?>
         </section>     
