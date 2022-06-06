@@ -7,6 +7,8 @@ require "Models/Category.php";
 require "Models/CategoryManager.php";
 require "Models/Chatroom.php";
 require "Models/ChatroomManager.php";
+require "Models/Article.php";
+require "Models/ArticleManager.php";
 
 require "Private/routing.php"; 
 

@@ -25,6 +25,16 @@ class CategorieManager{
         $query -> closeCursor();
         return $ListCategories;
     }
+
+    public function selectCategorieName($Id){
+        $query = $this->bddPDO->prepare("SELECT * FROM Categories WHERE Id = :Id");
+        $query -> bindValue(":Id", (int) $Id);
+        $query-> execute();
+        $query->setFetchMode(PDO::FETCH_CLASS  | PDO::FETCH_PROPS_LATE, "Categorie" );
+        $selectName = $query->fetch();
+        $query -> closeCursor();
+        return $selectName;
+    } 
 }
 
 ?>

@@ -14,6 +14,12 @@
                         // $ConnectedUser = $manager->selectPseudo($_POST["pseudo"]);
                         // "Pseudo" => $ConnectedUser->getPseudo(),
                         "Pseudo" => ($manager->selectPseudo($_POST["pseudo"]))->getPseudo(),
+                        "Id" => ($manager->selectPseudo($_POST["pseudo"]))->getId(),
+                        "Firstname" => ($manager->selectPseudo($_POST["pseudo"]))->getFirstname(),
+                        "Lastname" => ($manager->selectPseudo($_POST["pseudo"]))->getLastname(),
+                        "Email" => ($manager->selectPseudo($_POST["pseudo"]))->getEmail(),
+                        "Phone" => ($manager->selectPseudo($_POST["pseudo"]))->getPhone(),
+                        "Biographie" => ($manager->selectPseudo($_POST["pseudo"]))->getBiographie(),
                     ];
                     header("Location:../index.php");
                 }else{

@@ -20,48 +20,48 @@
             $query->execute();
         }
 
-        // public function selectAll(){
-        //     $query = $this->bddPDO->query("SELECT * FROM Users");
+        public function selectAll(){
+            $query = $this->bddPDO->query("SELECT * FROM Users");
         
-        //     $query->setFetchMode(PDO::FETCH_CLASS  | PDO::FETCH_PROPS_LATE, "Users" );
-        //     $List = $query -> fetchAll();
+            $query->setFetchMode(PDO::FETCH_CLASS  | PDO::FETCH_PROPS_LATE, "Users" );
+            $List = $query -> fetchAll();
 
-        //     $query -> closeCursor();
-        //     return $List;
-        // }
+            $query -> closeCursor();
+            return $List;
+        }
 
-        // public function selectOne($Id){
-        //     $query = $this->bddPDO->prepare("SELECT * FROM Users WHERE Id = :Id");
-        //     $query -> bindValue(":Id", (int) $Id);
-        //     $query-> execute();
-        //     $query->setFetchMode(PDO::FETCH_CLASS  | PDO::FETCH_PROPS_LATE, "Users" );
-        //     $select = $query->fetch();
-        //     $query -> closeCursor();
-        //     return $select;
-        // } 
+        public function selectOneUser($Id){
+            $query = $this->bddPDO->prepare("SELECT * FROM Users WHERE Id = :Id");
+            $query -> bindValue(":Id", (int) $Id);
+            $query-> execute();
+            $query->setFetchMode(PDO::FETCH_CLASS  | PDO::FETCH_PROPS_LATE, "Users" );
+            $select = $query->fetch();
+            $query -> closeCursor();
+            return $select;
+        } 
     
-        // public function update($user){
+        public function updateUser($user){
         
-        //     if( isset( $_POST["firstname"], $_POST["lastname"], $_POST["email"], $_POST["phone"], $_POST["biographie"])){
-        //         $query = $this->bddPDO-> prepare("UPDATE dbb SET firstname=:firstname, lastname=:lastname, email=:email, phone=:phone, biographie=:biographie WHERE id = :id");
-        //         if( isset( $_POST["firstname"], $_POST["lastname"], $_POST["email"], $_POST["phone"], $_POST["biographie"])){
-        //             $user->setFirstname($_POST["firstname"]);
-        //             $user->setLastname($_POST["lastname"]);
-        //             $user->setEmail($_POST["email"]);
-        //             $user->setPhone($_POST["phone"]);
-        //             $user->setBiographie($_POST["biographie"]);
-        //         }
-        //         $query -> execute([
-        //             "firstname" => $_POST["firstname"],
-        //             "lastname" => $_POST["lastname"],
-        //             "email" => $_POST["email"],
-        //             "phone" => $_POST["phone"],
-        //             "biographie" => $_POST["biographie"],
-        //             "id" => $_GET["id"]
-        //         ]);
-        //         return $user;
-        //     }
-        // }
+            if( isset( $_POST["firstname"], $_POST["lastname"], $_POST["email"], $_POST["phone"], $_POST["biographie"])){
+                $query = $this->bddPDO-> prepare("UPDATE Users SET Firstname=:firstname, Lastname=:lastname, Email=:email, Phone=:phone, Biographie=:biographie WHERE Id = :id");
+                if( isset( $_POST["firstname"], $_POST["lastname"], $_POST["email"], $_POST["phone"], $_POST["biographie"])){
+                    $user->setFirstname($_POST["firstname"]);
+                    $user->setLastname($_POST["lastname"]);
+                    $user->setEmail($_POST["email"]);
+                    $user->setPhone($_POST["phone"]);
+                    $user->setBiographie($_POST["biographie"]);
+                }
+                $query -> execute([
+                    "firstname" => $_POST["firstname"],
+                    "lastname" => $_POST["lastname"],
+                    "email" => $_POST["email"],
+                    "phone" => $_POST["phone"],
+                    "biographie" => $_POST["biographie"],
+                    "id" => $_SESSION["CurrentUser"]["Id"]
+                ]);
+                return $user;
+            }
+        }
 
         // public function delete($id){
         //         $query = $this->bddPDO-> prepare("DELETE FROM dbb WHERE id = :id");

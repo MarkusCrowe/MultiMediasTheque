@@ -1,9 +1,3 @@
-<?php   
-    $bddPDO = new PDO('sqlite:Private/DataBase/Project_Database.db');
-    $bddPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $categories_manager = new CategorieManager($bddPDO);
-    $chatrooms_manager = new ChatroomsManager($bddPDO); 
-?>
 
     <nav class="toggle hide">
         <h2>MENU</h2>
@@ -13,7 +7,7 @@
             <?php if(isset($_SESSION["CurrentUser"]["Pseudo"]) == "Admin"){ ?>
                 <a href="?page=category">Add Categorie</a>
             <?php } ?>
-            <?php var_dump($_SESSION["CurrentUser"]["Pseudo"]); ?>
+            <!-- <?php var_dump($_SESSION["CurrentUser"]["Pseudo"]); ?> -->
             <?php foreach ($categories_manager->selectCategorie() as $categorie) : ?>
                 <h4><?= $categorie->getCategorie_name(); ?>
                     <?php if (isset($_SESSION["CurrentUser"])) { ?>
@@ -27,6 +21,3 @@
             <?php endforeach ?>
         </ul>
     </nav>     
-    
-    
- 

@@ -12,10 +12,9 @@
             <!-- <p>Hello <?= $_SESSION["CurrentUser"]["Pseudo"]; ?>!</p> -->
             <i class="fa-solid fa-circle-user" id="account"></i>
             <div id="account-menu" class="hide">
-                <a href="?page=account">Account</a>
+                <a href="?page=account&Id=<?= $_SESSION["CurrentUser"]["Id"] ?>">Account</a>
                 <a href="../Views/logout.php">Logout</a>
             </div>
-
         <?php } ?>
     </section>
 </header>
