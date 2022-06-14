@@ -11,4 +11,5 @@
             <?php endforeach ?>
         </ul>
     </article>
+    <a href="?page=home">Homepage</a>
 </section>

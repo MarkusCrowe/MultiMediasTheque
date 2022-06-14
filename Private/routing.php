@@ -11,6 +11,7 @@
         "image" => "image_controller.php",
         "edit_user" => "edit_user_controller.php",
         "add_news" => "add_news_controller.php",
+        "new_edit" => "new_edit_controller.php",
         "articles_edit" => "articles_edit_controller.php",
         "article_view" => "article_view_controller.php",
         "articles_list" => "articles_list_controller.php"
