@@ -1,4 +1,4 @@
-<article>
+<article class="formulaire">
     <form method="POST">
         <input type="text" name="pseudo" placeholder="Pseudo">
         <!-- <?php if (isset($errors) && in_array(Users::PSEUDO_INVALID, $errors)) : ?>

@@ -1,6 +1,6 @@
 <?php
     const AVAILABLE_ROUTES = [
-        "index" => "index_controller.php",
+        "index" => "home_controller.php",
         "register" => "add_users_controller.php",
         "login" => "login_controller.php",
         "navigation" => "navigation_controller.php",
@@ -10,8 +10,10 @@
         "account" => "account_controller.php",
         "image" => "image_controller.php",
         "edit_user" => "edit_user_controller.php",
-        "news" => "add_news_controller.php",
-        "articles" => "articles_list_controller.php",
+        "add_news" => "add_news_controller.php",
+        "articles_edit" => "articles_edit_controller.php",
+        "article_view" => "article_view_controller.php",
+        "articles_list" => "articles_list_controller.php"
     ];
 
     function getRoute(): string {

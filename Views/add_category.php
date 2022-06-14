@@ -1,4 +1,4 @@
-<article>
+<article class="formulaire">
     <form method="POST">
         <?php if(isset($errors) && in_array(Categorie::CATEGORIE_INVALID, $errors)): ?>
             <p>No name</p>

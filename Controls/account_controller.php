@@ -5,6 +5,5 @@ $UserMana = new UsersManager($bddPDO);
 
 $userProfil = $UserMana -> selectOneUser((int) $_SESSION["CurrentUser"]["Id"]);
 
-
 require "Views/account.php";
 ?>

@@ -9,6 +9,9 @@ require "Models/Chatroom.php";
 require "Models/ChatroomManager.php";
 require "Models/Article.php";
 require "Models/ArticleManager.php";
+require "Models/Avatar.php";
+require "Models/AvatarManager.php";
+
 
 require "Private/routing.php"; 
 

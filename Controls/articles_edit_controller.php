@@ -4,7 +4,5 @@
 
     $ArticleMana = new ArticleManager($bddPDO);
 
-    $ArticleViews = $ArticleMana -> selectOneArticle((int) $_GET["Id"]);
-
-    require "Views/news_display.php"
+    require "Views/articles_edit.php";
 ?>

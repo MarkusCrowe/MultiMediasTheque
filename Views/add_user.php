@@ -1,4 +1,4 @@
-<article>
+<article class="formulaire>
     <form method="POST">
         <h2>Formulaire d'inscription</h2>
 
@@ -16,7 +16,7 @@
             <p>Invalid pseudo!</p>
         <?php endif ?>
         <input type="text" name="pseudo" placeholder="Pseudo">
-
+        
         <?php if (isset($errors) && in_array(Users::PASSWORD_INVALID, $errors)) : ?>
             <p>Invalid password!</p>
         <?php endif ?>

@@ -15,9 +15,7 @@
     <?php require "Views/Templates/header.php"; ?>
     <main>
         <?php require "Controls/navigation_controller.php"; ?>
-        <section>
-            <?php require getRoute(); ?>
-        </section>     
+        <?php require getRoute(); ?>
     </main>
     <?php require "Views/Templates/footer.php"; ?>
 </body>

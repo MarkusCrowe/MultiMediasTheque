@@ -4,5 +4,6 @@
  
      $ArticleMana = new ArticleManager($bddPDO);
  
-    require "Views/articles_list.php"; 
+    require "Views/home.php"; 
+
 ?>

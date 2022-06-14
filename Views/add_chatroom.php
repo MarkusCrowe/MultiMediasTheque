@@ -1,4 +1,4 @@
-<article>
+<article class="formulaire">
     <form method="POST">
     <h1><?= $DisplayName->getCategorie_name(); ?></h1>
         <?php if(isset($errors) && in_array(Chatroom::CHATROOM_INVALID, $errors)): ?>

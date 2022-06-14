@@ -9,16 +9,11 @@
     <p><?= $userProfil->getBiographie(); ?></p>
 
     <a href="?page=edit_user">Edit</a>
-    
+    <!-- <a href="?page=image">Avatar</a> -->
 </article>
 
-<?php if($_SESSION["CurrentUser"]["Pseudo"] === "Admin"){ ?>
-    <p>YOLOLOOOLOLOLOLOLO</p>
+<?php if($_SESSION["CurrentUser"]["Pseudo"] === "Admin"){ ?>    
     
-    <!-- <a href="?page=image">Add Images</a> -->
-    <p></p>
     <!-- <a href="?page=news">Add News</a> -->
-    <p></p>
-    <a href="?page=articles">Articles</a>
+    <a href="?page=articles_edit">Articles</a>
 <?php }; ?>
-

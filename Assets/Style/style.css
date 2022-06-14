@@ -102,13 +102,6 @@ body main nav{
     z-index: 2;
     position: absolute;
 }
-main section article{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 /****************************************************/
 /****************************************************/
 /********************** FOOTER **********************/
@@ -157,7 +150,7 @@ footer p a{
 /******************* FORMULAIRE *********************/
 /****************************************************/
 /****************************************************/
-article{
+.formulaire{
     background-color: rgb(172, 172, 245);
     position: relative;
     display: flex;
@@ -165,7 +158,7 @@ article{
     justify-content: center;
     align-items: center;
 }
-article form{
+.formulaire form{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -178,18 +171,18 @@ article form{
     border: 1px solid black;
     background-color: beige;
 }
-article form input{
+.formulaire form input{
     width: 60%;
     border: 1px solid black;
     border-radius: 3px;
 }
-article form textarea{
+.formulaire form textarea{
     width: 90%;
     border: 1px solid black;
     border-radius: 3px;
     color: black;
 }
-article form button{
+.formulaire form button{
     width: fit-content;
     background-color: rgb(74, 67, 106);
     color: white;
@@ -199,12 +192,12 @@ article form button{
     border-radius: 5px;
     transition: 0.3s all ease;
 }
-article form button:hover{
+.formulaire form button:hover{
     background-color: rgb(172, 172, 245);
     color: black;
     cursor: pointer;
 }
-article form a{
+.formulaire form a{
     color: black;
     text-decoration: none;
     position: absolute;
@@ -217,12 +210,12 @@ article form a{
 /**************** ARTICLES LISTE ********************/
 /****************************************************/
 /****************************************************/
-.articles_list{
+.articles_edit{
     width: 90%;
     margin: auto;
 
 }
-.articles_list section{
+.articles_edit section{
     width: 90%;
     background-color: whitesmoke;
     margin: 1em 0;
@@ -231,37 +224,37 @@ article form a{
     box-shadow: 1px 1px 5px 2px rgb(72, 72, 119);
     position: relative;
 }
-.articles_list section h1{
+.articles_edit section h1{
     font-size: 2.5rem;
     text-decoration: underline;
     text-align: center;
     font-weight: 900;
 }
-.articles_list section p{
+.articles_edit section p{
     font-size: 1rem;
     text-align: justify;
     margin-bottom: 0.2em;
 }
-.articles_list section img{
+.articles_edit section img{
     width: 40%;
     border: 1px solid black;
 }
-.articles_list section .image_1{
+.articles_edit section .image_1{
     float: right;
     margin-left: 0.5em;
 }
-.articles_list section .image_2{
+.articles_edit section .image_2{
     float: left;
     margin-right: 0.5em;
 }
-.articles_list section button{
+.articles_edit section button{
     width: fit-content;
     margin: auto;
     border-radius: 50%;
     border: 1px solid black;
     font-size: 1.5rem;
 }
-.articles_list section button a{
+.articles_edit section button a{
     color: black;
 }
 .button_edit{
@@ -278,4 +271,117 @@ article form a{
     padding: 0.1em 0.3em;
     background-color: rgb(234, 73, 73);
 }
-
+.intro_concl{
+    font-weight: 700;
+    font-style: italic;
+}
+/****************************************************/
+/****************************************************/
+/******************** HOMEPAGE **********************/
+/****************************************************/
+/****************************************************/
+.homepage{
+    display: flex;
+    flex-direction: column;
+}
+.homepage h1{
+    text-align: center;
+}
+.news{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 26em;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin: 0.5em auto 1em;
+    padding: 0;
+    gap: 0.5em;
+    width: 95%;
+}
+.news h1{
+    text-align: center;
+}
+.news .new{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    height: 11.5em;
+    padding: 0.5em;
+    background-color: whitesmoke;
+    text-align: center;
+    box-shadow: 1px 1px 5px 2px rgb(72, 72, 119);
+}
+.news .new img{
+    width:100%;
+}
+.actus{
+    width: 95%;
+    margin: 0.5em auto 1em;
+    background-color: white;
+    box-shadow: 1px 1px 5px 2px rgb(72, 72, 119);
+    position: relative;
+}
+.actus .all_actus{
+    color: black;
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    right: 0.5em;
+    font-weight: 900;
+}
+.actus ul{
+    padding-left: 2em;
+    line-height: 1.8rem;
+}
+.actus ul li{
+    width: fit-content;
+}
+.actus ul li a{
+    text-decoration: none;
+}
+/****************************************************/
+/****************************************************/
+/******************** ARTICLES **********************/
+/****************************************************/
+/****************************************************/
+.article_view{
+    background-color: white;
+    padding: 1em;
+    margin: 0.5em;
+}
+.article_view h1{
+    position: absolute;
+    font-size:xx-large;
+    font-weight: 900;
+    text-align: center;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.article_view p{
+    text-align: justify;
+    margin: 1em 0;
+    line-height: 1.3rem;
+}
+.article_view img{
+    width: 50%;
+    margin: 0;
+    padding: 0;
+}
+.article_view .image_2{
+    float: right;
+    margin-left: 0.5em;
+}
+.article_view .image_3{
+    float: left;
+    margin-right: 0.5em;
+}
+.article_view header{
+    position: relative;
+    overflow: hidden;
+    height: 10em;
+}
+.article_view header img{
+    width: 100%;
+}
