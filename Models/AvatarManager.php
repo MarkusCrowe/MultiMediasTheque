@@ -37,16 +37,21 @@
             return $select;
         }
 
-        public function updateAvatar($newAvatar){
+        public function updateArticle($new){     
+            if( isset( $_FILES["upload_avatar"])){
                 $query = $this->bddPDO-> prepare("UPDATE Avatar SET Name=:Name, Link=:Link WHERE Id = :Id");
-                if( isset( $_POST["upload_avatar"])){
-                    $newAvatar->setLink($_POST["upload_avatar"]);
+                if( isset( $_FILES["upload_avatar"])){
+                    $new->setImage_1_name(uniqid());
+                    $new->setImage_1_path("Assets/Images/Upload/" . $_FILES["upload_avatar"]["name"]);
                 }
                 $query -> execute([
-                    "upload_avatar" => $_POST["upload_avatar"],
-                    "id" => $_SESSION["CurrentUser"]["Id"]
+                    "Name" => uniqid(),
+                    "Link" => "Assets/Images/Upload/" . $_FILES["upload_avatar"]["name"],
+                    "Id" => $_GET["Id"]
                 ]);
-                return $newAvatar;  
+                move_uploaded_file($_FILES["upload_1"]["tmp_name"], "Assets/Images/Upload/" . $_FILES["upload_avatar"]["name"]);
+                return $new;
+            }          
         }
     }
 

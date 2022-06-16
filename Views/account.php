@@ -15,5 +15,7 @@
 <?php if($_SESSION["CurrentUser"]["Pseudo"] === "Admin"){ ?>    
     
     <!-- <a href="?page=news">Add News</a> -->
-    <a href="?page=articles_edit">Articles</a>
+    <a href="?page=news_list">News</a>
+    <a href="?page=article_list">Articles</a>
+
 <?php }; ?>

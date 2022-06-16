@@ -1,8 +1,9 @@
 <?php
     $bddPDO = new PDO('sqlite:Private/DataBase/Project_Database.db');
     $bddPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $NewsMana = new NewsManager($bddPDO);
 
-    $ArticleMana = new ArticleManager($bddPDO);
+    $news = $NewsMana -> selectOneNews((int) $_GET["Id"]);
 
-    require "Views/articles_edit.php";
+    require "Views/new_view.php";
 ?>

@@ -1,6 +1,7 @@
 <?php
 
-class Article {
+class News
+ {
 
     private $errors = [],
     $Id,

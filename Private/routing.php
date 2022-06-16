@@ -12,9 +12,10 @@
         "edit_user" => "edit_user_controller.php",
         "add_news" => "add_news_controller.php",
         "new_edit" => "new_edit_controller.php",
-        "articles_edit" => "articles_edit_controller.php",
-        "article_view" => "article_view_controller.php",
-        "articles_list" => "articles_list_controller.php"
+        "new_delete" => "new_delete_controller.php",
+        "news_list" => "news_list_controller.php",
+        "new_view" => "new_view_controller.php",
+        "all_news_list" => "all_news_list_controller.php"
     ];
 
     function getRoute(): string {

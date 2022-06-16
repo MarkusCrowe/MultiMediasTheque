@@ -207,73 +207,76 @@ footer p a{
 }
 /****************************************************/
 /****************************************************/
-/**************** ARTICLES LISTE ********************/
+/**************** NEWS LIST ADMIN *******************/
 /****************************************************/
 /****************************************************/
-.articles_edit{
+.news_list{
     width: 90%;
     margin: auto;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.articles_edit section{
+.news_list .button_add_news{
+    width: fit-content;
+    margin: 0.3em 0;
+    border-radius: 50%;
+    border: 1px solid black;
+    font-size: 2rem;
+    padding: 0.07em 0.3em;
+    background-color: rgb(115, 170, 115);
+    box-shadow: 0px 0px 4px 2px rgb(61, 92, 61);
+    transition: 0.3s all ease;
+}
+.button_add_news:hover{
+    transform: scale(1.2);
+}
+.news_list section{
     width: 90%;
     background-color: whitesmoke;
-    margin: 1em 0;
+    margin: 0.5em 0;
     padding: 1em;
     border-radius: 3px;
     box-shadow: 1px 1px 5px 2px rgb(72, 72, 119);
     position: relative;
 }
-.articles_edit section h1{
-    font-size: 2.5rem;
-    text-decoration: underline;
-    text-align: center;
-    font-weight: 900;
+.news_list section h3{
+    width: 70%;
+    overflow-x: hidden;
 }
-.articles_edit section p{
-    font-size: 1rem;
-    text-align: justify;
-    margin-bottom: 0.2em;
-}
-.articles_edit section img{
-    width: 40%;
-    border: 1px solid black;
-}
-.articles_edit section .image_1{
-    float: right;
-    margin-left: 0.5em;
-}
-.articles_edit section .image_2{
-    float: left;
-    margin-right: 0.5em;
-}
-.articles_edit section button{
+.news_list section button{
     width: fit-content;
     margin: auto;
     border-radius: 50%;
     border: 1px solid black;
     font-size: 1.5rem;
 }
-.articles_edit section button a{
+.news_list button a{
     color: black;
+}
+.button_view{
+    position: absolute;
+    top: 0.4em;
+    right: 4.1em;
+    padding: 0.07em 0.22em;
+    background-color: rgb(119, 119, 213);
+    box-shadow: 0px 0px 4px 2px rgb(84, 84, 146);
 }
 .button_edit{
     position: absolute;
-    top: 0.5em;
-    right: 2.5em;
+    top: 0.4em;
+    right: 2.2em;
     padding: 0.07em 0.25em;
-    background-color: rgb(115, 170, 115);
+    background-color: rgb(235, 175, 64);
+    box-shadow: 0px 0px 4px 2px rgb(163, 124, 52);
 }
 .button_delete{
     position: absolute;
-    top: 0.5em;
-    right: 0.5em;
+    top: 0.4em;
+    right: 0.3em;
     padding: 0.1em 0.3em;
     background-color: rgb(234, 73, 73);
-}
-.intro_concl{
-    font-weight: 700;
-    font-style: italic;
+    box-shadow: 0px 0px 4px 2px rgb(154, 49, 49);
 }
 /****************************************************/
 /****************************************************/
@@ -344,44 +347,77 @@ footer p a{
 }
 /****************************************************/
 /****************************************************/
-/******************** ARTICLES **********************/
+/******************** ARTICLES VIEWS ****************/
 /****************************************************/
 /****************************************************/
-.article_view{
+.new_view{
     background-color: white;
     padding: 1em;
     margin: 0.5em;
 }
-.article_view h1{
+.new_view h1{
     position: absolute;
     font-size:xx-large;
     font-weight: 900;
     text-align: center;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
-.article_view p{
+.new_view p{
     text-align: justify;
     margin: 1em 0;
     line-height: 1.3rem;
 }
-.article_view img{
+.new_view img{
     width: 50%;
     margin: 0;
     padding: 0;
 }
-.article_view .image_2{
+.new_view .image_2{
     float: right;
     margin-left: 0.5em;
 }
-.article_view .image_3{
+.new_view .image_3{
     float: left;
     margin-right: 0.5em;
 }
-.article_view header{
+.new_view header{
     position: relative;
     overflow: hidden;
     height: 10em;
 }
-.article_view header img{
+.new_view header img{
     width: 100%;
+}
+/****************************************************/
+/****************************************************/
+/******************** All NEWS LIST *****************/
+/****************************************************/
+/****************************************************/
+.all_news_list{
+    width: 95%;
+    margin: 0.5em auto 1em;
+    background-color: white;
+    box-shadow: 1px 1px 5px 2px rgb(72, 72, 119);
+    position: relative;
+}
+.all_news_list h1{
+    text-align: center;
+}
+.all_news_list ul{
+    padding-left: 2em;
+    line-height: 1.8rem;
+}
+.all_news_list ul li{
+    width: fit-content;
+}
+.all_news_list ul li a{
+    text-decoration: none;
+}
+.all_news_list > a{
+    color: black;
+    text-decoration: none;
+    position: absolute;
+    bottom: 0;
+    right: 0.5em;
+    font-weight: 900;
 }

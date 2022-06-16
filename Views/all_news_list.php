@@ -1,11 +1,11 @@
-<section>
+<section class="all_news_list">
     <h1> - Toules Les Actualités - </h1>
     <article>
         <ul>
-            <?php foreach ($ArticleMana->selectAllArticles() as $ArticleViews) : ?>
+            <?php foreach ($NewsMana->selectAllNews() as $NewViews) : ?>
                 <li>
-                    <a href="?page=article_view&Id=<?= ($ArticleViews->getId()) ?>">
-                        <h4><?= $ArticleViews->getTitle(); ?></h4>
+                    <a href="?page=new_view&Id=<?= ($NewViews->getId()) ?>">
+                        <h4><?= $NewViews->getTitle(); ?></h4>
                     </a>
                 </li>
             <?php endforeach ?>
