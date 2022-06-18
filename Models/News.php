@@ -18,9 +18,7 @@ class News
     $Image_2_path,
     $Image_3_path,
     $Id_User;
-    
-    const CATEGORIE_INVALID = 1;
-   
+       
     public function __construct($data = []){
         $this->hydrater($data);
     }
@@ -127,10 +125,5 @@ class News
     public function getErrors(){
         return $this->errors;
     }
-
-    // public function isCategorieValid(){
-    //     return !((empty($this->Categorie_name)));
-    // }
 }
-
 ?>

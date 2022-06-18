@@ -33,6 +33,18 @@
     </article>
 
     <h1> - Objets Récents - </h1>
+    <article class="actus">
+        <a href="?page=all_articles_list" class="all_actus">All</a>
+        <ul>
+            <?php foreach ($ArticlesMana->selectFiveArticles() as $ArticlesViews) : ?>
+                <li>
+                    <a href="?page=article_view&Id=<?= ($ArticlesViews->getId()) ?>">
+                        <h4><?= $ArticlesViews->getTitle(); ?></h4>
+                    </a>
+                </li>
+            <?php endforeach ?>
+        </ul>
+    </article>
 
     <h1> - Forums Récents - </h1>
 </section>

@@ -36,7 +36,7 @@
         $query = $bddPDO->prepare("INSERT INTO News (Image_1_name, Image_1_path, Title, Introduction, Paragraphe_1, Image_2_name, Image_2_path, Paragraphe_2, Image_3_name, Image_3_path, Paragraphe_3, Conclusion, Id_User) VALUES(:Img_1_name, :Img_link_1, :Title, :Introduction, :Paragraphe_1, :Img_2_name, :Img_link_2, :Paragraphe_2, :Img_3_name, :Img_link_3, :Paragraphe_3, :Conclusion, :Id_user)");
         $query -> execute($data);
 
-        header("Location: ?page=articles_edit");
+        header("Location: ?page=news_list");
 
     }
 

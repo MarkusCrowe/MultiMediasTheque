@@ -8,5 +8,6 @@
             <h3><?= $NewViews->getTitle(); ?></h3>
         </section>
     <?php endforeach ?>
+    <button type="button"><a href="?page=account">Return</a></button>
 </article>
 

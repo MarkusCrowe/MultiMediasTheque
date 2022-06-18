@@ -1,36 +1,34 @@
 <article class="formulaire">
     <form method="post" enctype="multipart/form-data" >
     <h1>Add News</h1>
-        <label>Bannière // Vignette
+        <label>Bannière // Vignette </label>
             <input type="file" name="upload_1" class="upload">
-        </label>
-        <label>Titre de l'article
+       
+        <label>Titre de la News</label>
             <input type="text" name="Titre_article">
-        </label>
-        <label>Introduction
+        
+        <label>Introduction</label>
             <textarea name="introduction"></textarea>
-        </label>
-        <label>Paragraphe 1
+        
+        <label>Paragraphe 1</label>
             <textarea name="paragraphe_1"></textarea>
-        </label>
-        <label>Image 1
+        
+        <label>Image 1</label>
             <input type="file" name="upload_2" class="upload">
-        </label>
-        <label>Paragraphe 2
+        
+        <label>Paragraphe 2</label>
             <textarea name="paragraphe_2"></textarea>
-        </label>
-        <label>Image 2
+        
+        <label>Image 2</label>
             <input type="file" name="upload_3" class="upload">
-        </label>
-        <label>Paragraphe 3
+        
+        <label>Paragraphe 3</label>
             <textarea name="paragraphe_3"></textarea>
-        </label>
-        <label>Conclusion
+        
+        <label>Conclusion </label>
             <textarea name="conclusion"></textarea>
-        </label>
-
-        <button type="submit" name="submit">Envoyer</button>
+       
+        <button type="submit" name="submit">Submit</button>
     </form>
 </article>
-<a href="?page=account">Retour</a>
-
+<!-- <a href="?page=news_list">Retour</a> -->

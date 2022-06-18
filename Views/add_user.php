@@ -1,4 +1,4 @@
-<article class="formulaire>
+<section class="formulaire">
     <form method="POST">
         <h2>Formulaire d'inscription</h2>
 
@@ -37,4 +37,4 @@
         </div>
     <?php endif ?>
     <a href="?page=index">Retour</a>
-</article>
+</section>

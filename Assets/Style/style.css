@@ -172,15 +172,28 @@ footer p a{
     background-color: beige;
 }
 .formulaire form input{
-    width: 60%;
+    width: 80%;
     border: 1px solid black;
     border-radius: 3px;
+    margin-bottom: 1em;
+}
+.formulaire h1{
+    text-decoration: underline;
+}
+.formulaire form label{
+    font-weight: 600;
+    font-size: 1rem;
+}
+.formulaire form img{
+    width: 100%;
 }
 .formulaire form textarea{
-    width: 90%;
+    width: 80%;
+    height:10em;
     border: 1px solid black;
     border-radius: 3px;
     color: black;
+    margin-bottom: 1em;
 }
 .formulaire form button{
     width: fit-content;
@@ -196,6 +209,9 @@ footer p a{
     background-color: rgb(172, 172, 245);
     color: black;
     cursor: pointer;
+}
+.formulaire form button a{
+    position: inherit;
 }
 .formulaire form a{
     color: black;
@@ -387,6 +403,10 @@ footer p a{
 }
 .new_view header img{
     width: 100%;
+}
+.intro_concl{
+    font-weight: 700;
+    font-style: italic;
 }
 /****************************************************/
 /****************************************************/

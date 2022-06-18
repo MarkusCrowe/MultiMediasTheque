@@ -1,5 +1,5 @@
 <section class="all_news_list">
-    <h1> - Toules Les Actualités - </h1>
+    <h1> - Toutes Les Actualités - </h1>
     <article>
         <ul>
             <?php foreach ($NewsMana->selectAllNews() as $NewViews) : ?>
