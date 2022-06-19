@@ -8,5 +8,5 @@
         <button type="submit">Submit</button>
     </form>
         
-    <a href="../index.php">Retour</a>
+    <a href="?page=forums_chatrooms&Id=<?= $_GET["Id"]; ?>">Retour</a>
 </article>

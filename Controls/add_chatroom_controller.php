@@ -13,7 +13,6 @@
         $test = $Chatrooms->getCategorie_id();
         if ($Chatrooms->isChatroomValid()){
             $Chatroom_manager->insertChatroom($Chatrooms);
-            header("Location:../index.php");   
         }else{
             $errors = $Chatrooms->getErrors();
         }

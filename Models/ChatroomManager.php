@@ -8,7 +8,7 @@ class ChatroomsManager{
         $this->bddPDO = $bddPDO;
     }
 
-    public function insertChatroom(chatroom $Chat){
+    public function insertChatroom(Chatroom $Chat){
         $query = $this->bddPDO->prepare("INSERT INTO Chatrooms(Chatroom_name, Categorie_id) VALUES (:Chatroom_name, :Categorie_id)");
 
         $query->bindValue(":Chatroom_name", $Chat->getChatroom_name());
@@ -38,6 +38,16 @@ class ChatroomsManager{
 
         $query -> closeCursor();
         return $chatroomCategorie;
+    }
+
+    public function selectFiveChatrooms(){
+        $query = $this->bddPDO->query("SELECT * FROM Chatrooms ORDER BY Id DESC LIMIT 5");
+    
+        $query->setFetchMode(PDO::FETCH_CLASS  | PDO::FETCH_PROPS_LATE, "Chatroom" );
+        $List = $query -> fetchAll();
+
+        $query -> closeCursor();
+        return $List;
     }
 }
 ?>

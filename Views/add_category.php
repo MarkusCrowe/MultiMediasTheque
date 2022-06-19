@@ -6,5 +6,5 @@
         <input type="text" name="categorie" placeholder="New categorie name...">
         <button type="submit">Submit</button>
     </form>
-    <a href="?page=index">Retour</a>
+    <a href="?page=forums_category">Retour</a>
 </article>

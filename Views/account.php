@@ -17,5 +17,6 @@
     <!-- <a href="?page=news">Add News</a> -->
     <a href="?page=news_list">News</a>
     <a href="?page=articles_list">Articles</a>
-
+    <a href="?page=category">Add Categorie de Discussion</a>
+    <a href="?page=forums_category">Forums</a>
 <?php }; ?>

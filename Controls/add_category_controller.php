@@ -12,7 +12,7 @@
         if ($Categories->isCategorieValid()){
             $Categorie_manager->insertCategorie($Categories);
             // $sucess = "Catégorie créée"; 
-            header("Location:../index.php");   
+            header("Location: ?page=category");   
         }else{
             $errors = $Categories->getErrors();
         }

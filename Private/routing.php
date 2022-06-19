@@ -22,6 +22,9 @@
         "article_view" => "article_view_controller.php",
         "article_edit" => "article_edit_controller.php",
         "article_delete" => "article_delete_controller.php",
+        "forums_category" => "forums_category_controller.php",
+        "forums_chatrooms" => "forums_chatrooms_controller.php",
+        "forums_chats" => "forums_chats_controller.php",
     ];
 
     function getRoute(): string {

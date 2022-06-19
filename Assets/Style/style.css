@@ -363,7 +363,7 @@ footer p a{
 }
 /****************************************************/
 /****************************************************/
-/******************** ARTICLES VIEWS ****************/
+/******************** NEWS VIEWS ********************/
 /****************************************************/
 /****************************************************/
 .new_view{
@@ -440,4 +440,50 @@ footer p a{
     bottom: 0;
     right: 0.5em;
     font-weight: 900;
+}
+/****************************************************/
+/****************************************************/
+/******************** ARTICLES VIEWS ****************/
+/****************************************************/
+/****************************************************/
+.article_view{
+    background-color: white;
+    padding: 1em;
+    margin: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+.article_view h1{
+    font-size:xx-large;
+    font-weight: 900;
+    text-align: center;
+    /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
+}
+.article_view p{
+    text-align: justify;
+    line-height: 1.3rem;
+}
+.article_view img{
+    width: 80%;
+    padding: 0;
+    border: 10px double black;
+}
+/****************************************************/
+/****************************************************/
+/******************** FORUMS CHATS ******************/
+/****************************************************/
+/****************************************************/
+.chats{
+    background-color: white;
+    padding: 1em;
+    margin: 0.5em;
+}
+.chats .chat{
+    background-color: beige;
+    padding: 1em;
+    margin: 0.5em;
+    border-radius: 10px;
+    border:1px solid black ;
 }

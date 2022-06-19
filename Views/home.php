@@ -47,4 +47,16 @@
     </article>
 
     <h1> - Forums Récents - </h1>
+    <article class="actus">
+        <a href="?page=forums_category" class="all_actus">Forums</a>
+        <ul>
+            <?php foreach ($ChatroomsMana->selectFiveChatrooms() as $ChatroomsViews) : ?>
+                <li>
+                    <a href="?page=forums_chats&Id=<?= $ChatroomsViews->getId(); ?>">
+                        <h4><?= $ChatroomsViews->getChatroom_name(); ?></h4>
+                    </a>
+                </li>
+            <?php endforeach ?>
+        </ul>
+    </article>
 </section>

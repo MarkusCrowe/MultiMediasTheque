@@ -4,6 +4,7 @@
  
     $NewsMana = new NewsManager($bddPDO);
     $ArticlesMana = new ArticlesManager($bddPDO);
+    $ChatroomsMana = New ChatroomsManager($bddPDO);
  
     require "Views/home.php"; 
 
