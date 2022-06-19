@@ -1,6 +1,5 @@
 
 <section class="chats">
-<!-- passer article en div et la div en article -->
     <?php foreach ($Post_manager->selectChatroomsId($_GET["Id"]) as $PostManager) : ?>
         <article class="chat">
             <div>

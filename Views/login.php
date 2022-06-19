@@ -1,5 +1,6 @@
 <article class="formulaire">
     <form method="POST">
+        <h2>Log In</h2>
         <input type="text" name="pseudo" placeholder="Pseudo">
         <!-- <?php if (isset($errors) && in_array(Users::PSEUDO_INVALID, $errors)) : ?>
             <p>Invalid pseudo!</p>
@@ -12,5 +13,4 @@
 
         <button type="submit">Submit</button>
     </form>
-    <a href="../index.php">Retour</a>
 </article>

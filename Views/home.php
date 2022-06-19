@@ -1,13 +1,7 @@
 <!-- <p>Hello World!</p> -->
-<script src="../Assets/JS/horloge.js"></script>
-<div>
-    <div class="horloge">
-        <div class="heures"></div>
-        <div class="date"></div>
-    </div>
-</div>
+
 <section class="homepage">
-    <h1> - Actualités récentes - </h1>
+    <h1 id="actu"> - Actualités récentes - </h1>
     <article class="news">
         <?php foreach ($NewsMana->selectSixNews() as $NewViews) : ?>
             <section class="new">
@@ -18,7 +12,7 @@
         <?php endforeach ?>
     </article>
 
-    <h1> - Dernières Actualités - </h1>
+    <h1 id="actus"> - Dernières Actualités - </h1>
     <article class="actus">
         <a href="?page=all_news_list" class="all_actus">All</a>
         <ul>
@@ -32,7 +26,7 @@
         </ul>
     </article>
 
-    <h1> - Objets Récents - </h1>
+    <h1 id="article"> - Objets Récents - </h1>
     <article class="actus">
         <a href="?page=all_articles_list" class="all_actus">All</a>
         <ul>
@@ -46,7 +40,7 @@
         </ul>
     </article>
 
-    <h1> - Forums Récents - </h1>
+    <h1 id="forums"> - Forums Récents - </h1>
     <article class="actus">
         <a href="?page=forums_category" class="all_actus">Forums</a>
         <ul>

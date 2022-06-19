@@ -1,15 +1,15 @@
 <?php
     $bddPDO = new PDO('sqlite:Private/DataBase/Project_Database.db');    $bddPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);   
     $Post_manager = new ChatsManager($bddPDO);
-
     $PostManager = $Post_manager->selectChatroomsId($_GET["Id"]);
+    date_default_timezone_set("Europe/Paris");
 
     if(isset($_SESSION["CurrentUser"])){
         if(isset($_POST["comment"])){
             $Posts = new Chats([
                 "Content" => $_POST["comment"],
                 "Chatroom_id" => $_GET["Id"],
-                "Date" => date("m.d.y"),
+                "Date" => date("m.d.y") . " - " . date("H:i"),
                 "Pseudo" => $_SESSION["CurrentUser"]["Pseudo"],
             ]);
             if ($Posts->isPostValid()){

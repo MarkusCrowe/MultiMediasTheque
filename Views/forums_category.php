@@ -1,6 +1,8 @@
-<?php foreach ($categories_manager->selectCategorie() as $categorie) : ?>
-    <h4><a href="?page=forums_chatrooms&Id=<?= ($categorie->getId()) ?>"><?= $categorie->getCategorie_name(); ?></a>
-        
-    </h4>
-<?php endforeach ?>
-<a href="?page=account">Return</a>
+<section class="forum_category">
+    <article>
+        <?php foreach ($categories_manager->selectCategorie() as $categorie) : ?>
+            <p><a href="?page=forums_chatrooms&Id=<?= ($categorie->getId()) ?>"><?= $categorie->getCategorie_name(); ?></a></p>
+        <?php endforeach ?>
+    </article>
+    <p class="button_home"><a href="?page=home"><i class="fa-solid fa-house"></i></a></p>
+</section>

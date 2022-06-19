@@ -36,5 +36,4 @@
             <?= $sucess; ?>
         </div>
     <?php endif ?>
-    <a href="?page=index">Retour</a>
 </section>

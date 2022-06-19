@@ -11,5 +11,5 @@
             <?php endforeach ?>
         </ul>
     </article>
-    <a href="?page=home">Homepage</a>
+    <p class="button_home"><a href="?page=home"><i class="fa-solid fa-house"></i></a></p>
 </section>

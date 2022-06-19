@@ -1,5 +1,6 @@
 <article class="formulaire">
     <form method="POST">
+        <h1>Add Category</h1>
         <?php if(isset($errors) && in_array(Categorie::CATEGORIE_INVALID, $errors)): ?>
             <p>No name</p>
         <?php endif ?>

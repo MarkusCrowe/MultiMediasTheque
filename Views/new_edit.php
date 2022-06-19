@@ -34,5 +34,4 @@
 
         <button type="submit" name="submit">Envoyer</button>
     </form>
-    <button type="button"><a href="?page=news_list">Retour</a></button>
 </section>

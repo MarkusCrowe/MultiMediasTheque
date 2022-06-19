@@ -9,4 +9,3 @@
         <button type="submit">Save</button>
     </form>
 </section>
-<a href="?page=account">Admin</a>
