@@ -4,6 +4,7 @@
     $PostManager = $Post_manager->selectChatroomsId($_GET["Id"]);
     date_default_timezone_set("Europe/Paris");
 
+    // On récupere les donnée de chats pour les insérer dans la base donnée
     if(isset($_SESSION["CurrentUser"])){
         if(isset($_POST["comment"])){
             $Posts = new Chats([

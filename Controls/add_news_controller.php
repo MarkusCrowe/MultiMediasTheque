@@ -2,6 +2,7 @@
     $bddPDO = new PDO('sqlite:Private/DataBase/Project_Database.db');
     $bddPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
+    // ON recupere les donnée des images choisies pour les inserer dans la base de donnée avec un nom, des textes et leur chemins
     if(isset($_POST["submit"])){
         $dataImg = [
             "img_link_1" => "Assets/Images/Upload/" . $_FILES["upload_1"]["name"],
@@ -27,7 +28,6 @@
             "Paragraphe_2" => $_POST["paragraphe_2"],
             "Paragraphe_3" => $_POST["paragraphe_3"],
         ];
-        // echo $data["img_link"];
 
         move_uploaded_file($dataImg["img_file_1"],$dataImg["img_link_1"] );
         move_uploaded_file($dataImg["img_file_2"],$dataImg["img_link_2"] );
@@ -35,11 +35,7 @@
 
         $query = $bddPDO->prepare("INSERT INTO News (Image_1_name, Image_1_path, Title, Introduction, Paragraphe_1, Image_2_name, Image_2_path, Paragraphe_2, Image_3_name, Image_3_path, Paragraphe_3, Conclusion, Id_User) VALUES(:Img_1_name, :Img_link_1, :Title, :Introduction, :Paragraphe_1, :Img_2_name, :Img_link_2, :Paragraphe_2, :Img_3_name, :Img_link_3, :Paragraphe_3, :Conclusion, :Id_user)");
         $query -> execute($data);
-
         header("Location: ?page=news_list");
-
     }
-
     require "Views/add_news.php";
 ?>
-<!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius iusto quidem dolorem porro earum deleniti est eaque velit ex accusantium!</p> -->

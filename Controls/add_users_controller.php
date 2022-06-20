@@ -4,6 +4,7 @@
     $addUserManager = new UsersManager($bddPDO);
     $sucess = "";
     
+    // On récupère les données du formulaires pour les insérer dans la base de donnée
     if (isset($_POST["pseudo"])){
         $addUser = new Users([
             "Firstname" => $_POST["firstname"],
@@ -18,11 +19,8 @@
         if ($addUser->isUserValid()){
             $addUserManager->insert($addUser);
             $sucess = "Utlisateur enregistré"; 
-            // header("Location:?page=index");   
         }else{
             $errors = $addUser->getErrors();
-            // var_dump($errors);
-            // var_dump($addUser);
         }    
     }    
     require "Views/add_user.php"; 

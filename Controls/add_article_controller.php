@@ -2,6 +2,7 @@
     $bddPDO = new PDO('sqlite:Private/DataBase/Project_Database.db');
     $bddPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
+    // ON recupere les donnée de l'image choisie pour l'inserer dans la base de donnée avec un nom, un résume et son chemin
     if(isset($_POST["submit"])){
         $dataImg = [
             "img_link" => "Assets/Images/Upload/" . $_FILES["upload"]["name"],
