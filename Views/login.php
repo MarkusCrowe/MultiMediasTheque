@@ -1,16 +1,8 @@
 <article class="formulaire">
     <form method="POST">
-        <h2>Log In</h2>
+        <h2>Connexion</h2>
         <input type="text" name="pseudo" placeholder="Pseudo">
-        <!-- <?php if (isset($errors) && in_array(Users::PSEUDO_INVALID, $errors)) : ?>
-            <p>Invalid pseudo!</p>
-        <?php endif ?> -->
-
         <input type="password" name="password" placeholder="Password">
-        <!-- <?php if (isset($errors) && in_array(Users::PASSWORD_INVALID, $errors)) : ?>
-            <p>Invalid password!</p>
-        <?php endif ?> -->
-
-        <button type="submit">Submit</button>
+        <button type="submit">Valider</button>
     </form>
 </article>

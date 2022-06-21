@@ -13,12 +13,10 @@ require "Models/News.php";
 require "Models/NewsManager.php";
 require "Models/Articles.php";
 require "Models/ArticlesManager.php";
-require "Models/Avatar.php";
-require "Models/AvatarManager.php";
-
-
 
 require "Private/routing.php"; 
 
 require "Views/layout.php";
 ?>
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio eius ipsum aspernatur adipisci suscipit. Esse id alias provident placeat a tenetur eius cumque eligendi, modi molestiae omnis unde quia quas ab laboriosam, earum, blanditiis debitis ut exercitationem dolores delectus mollitia.

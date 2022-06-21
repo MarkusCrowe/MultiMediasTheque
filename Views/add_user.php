@@ -5,12 +5,12 @@
         <?php if (isset($errors) && in_array(Users::FIRSTNAME_INVALID, $errors)) : ?>
             <p>Invalid firstname!</p>
         <?php endif ?>
-        <input type="text" name="firstname" placeholder="Firstname">
+        <input type="text" name="firstname" placeholder="Prénom">
 
         <?php if (isset($errors) && in_array(Users::LASTNAME_INVALID, $errors)) : ?>
             <p>Invalid lastname!</p>
         <?php endif ?>
-        <input type="text" name="lastname" placeholder="Lastname">
+        <input type="text" name="lastname" placeholder="Nom">
 
         <?php if (isset($errors) && in_array(Users::PSEUDO_INVALID, $errors)) : ?>
             <p>Invalid pseudo!</p>
@@ -27,9 +27,9 @@
         <?php endif ?>
         <input type="email" name="email" placeholder="Email">
 
-        <input type="phone" name="phone" placeholder="Phone">
-        <textarea name="biographie" cols="30" rows="10" placeholder="Tell your story."></textarea>
-        <button type="submit">Submit</button>
+        <input type="phone" name="phone" placeholder="Téléphone">
+        <textarea name="biographie" cols="30" rows="10" placeholder="Raconte ton histoire"></textarea>
+        <button type="submit">Valider</button>
     </form>
     <?php if (isset($sucess)) : ?>
         <div>

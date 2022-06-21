@@ -1,6 +1,6 @@
 <article class="formulaire">
     <form method="post" enctype="multipart/form-data" >
-    <h1>Add News</h1>
+    <h1>Ajouter une actualité</h1>
         <label>Bannière // Vignette </label>
             <input type="file" name="upload_1" class="upload">
        

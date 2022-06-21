@@ -1,6 +1,6 @@
 <section class="formulaire">
     <form method="POST" enctype="multipart/form-data">
-        <h1>Edit News</h1>
+        <h1>Editer l'Actualité</h1>
         <label>Bannière // Vignette</label>
             <img src="<?= $edit_new->getImage_1_path(); ?>" alt="banniere">
             <input type="file" name="upload_1" class="upload">
@@ -30,8 +30,7 @@
         
         <label>Conclusion</label>
             <textarea name="conclusion"><?= $edit_new->getConclusion(); ?></textarea>
-        
 
-        <button type="submit" name="submit">Envoyer</button>
+        <button type="submit" name="submit">Valider</button>
     </form>
 </section>

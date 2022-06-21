@@ -1,6 +1,6 @@
 <section class="formulaire">
     <form method="POST" enctype="multipart/form-data">
-        <p>Are You Sure?</p>
-        <button type="submit"><a href="?page=news_list">Delete</a></button>
+        <p>Êtes vous sûr?</p>
+        <button type="submit"><a href="?page=news_list" title="News list">Valider</a></button>
     </form>
 </section>

@@ -175,6 +175,80 @@ footer p a{
 }
 /****************************************************/
 /****************************************************/
+/******************** HOMEPAGE **********************/
+/****************************************************/
+/****************************************************/
+.homepage{
+    display: flex;
+    flex-direction: column;
+}
+.homepage h1{
+    text-align: center;
+}
+.news{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 26em;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin: 0.5em auto 1em;
+    padding: 0;
+    gap: 0.5em;
+    width: 95%;
+    border-radius: 5px;
+}
+.news h1{
+    text-align: center;
+}
+.news .new{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    height: 11.5em;
+    padding: 0.5em;
+    background-color: var(--home-article-color);
+    text-align: center;
+    box-shadow: 1px 1px 5px 2px var(--home-article-shadow);
+    border-radius: 5px;
+}
+.news .new img{
+    width:100%;
+}
+.news .new a{
+    color: var(--title-color);
+}
+.actus{
+    width: 95%;
+    margin: 0.5em auto 1em;
+    background-color: var(--home-article-color);
+    box-shadow: 1px 1px 5px 2px var(--home-article-shadow);
+    position: relative;
+    border-radius: 5px;
+}
+.actus .all_actus{
+    color: var(--list-color);
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    right: 0.5em;
+    font-weight: 900;
+}
+.actus ul{
+    padding-left: 2em;
+    line-height: 1.8rem;
+}
+.actus ul li{
+    width: fit-content;
+}
+.actus ul li a{
+    text-decoration: none;
+    color: var(--list-color);
+}
+/****************************************************/
+/****************************************************/
 /******************* FORMULAIRE *********************/
 /****************************************************/
 /****************************************************/
@@ -322,80 +396,6 @@ footer p a{
     padding: 0.1em 0.3em;
     background-color: rgb(234, 73, 73);
     box-shadow: 0px 0px 4px 2px rgb(154, 49, 49);
-}
-/****************************************************/
-/****************************************************/
-/******************** HOMEPAGE **********************/
-/****************************************************/
-/****************************************************/
-.homepage{
-    display: flex;
-    flex-direction: column;
-}
-.homepage h1{
-    text-align: center;
-}
-.news{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 26em;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    margin: 0.5em auto 1em;
-    padding: 0;
-    gap: 0.5em;
-    width: 95%;
-    border-radius: 5px;
-}
-.news h1{
-    text-align: center;
-}
-.news .new{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 45%;
-    height: 11.5em;
-    padding: 0.5em;
-    background-color: var(--home-article-color);
-    text-align: center;
-    box-shadow: 1px 1px 5px 2px var(--home-article-shadow);
-    border-radius: 5px;
-}
-.news .new img{
-    width:100%;
-}
-.news .new a{
-    color: var(--title-color);
-}
-.actus{
-    width: 95%;
-    margin: 0.5em auto 1em;
-    background-color: var(--home-article-color);
-    box-shadow: 1px 1px 5px 2px var(--home-article-shadow);
-    position: relative;
-    border-radius: 5px;
-}
-.actus .all_actus{
-    color: var(--list-color);
-    text-decoration: none;
-    position: absolute;
-    top: 0;
-    right: 0.5em;
-    font-weight: 900;
-}
-.actus ul{
-    padding-left: 2em;
-    line-height: 1.8rem;
-}
-.actus ul li{
-    width: fit-content;
-}
-.actus ul li a{
-    text-decoration: none;
-    color: var(--list-color);
 }
 /****************************************************/
 /****************************************************/
@@ -941,6 +941,13 @@ footer p a{
     /******************** NEWS VIEWS ********************/
     /****************************************************/
     /****************************************************/
+    .new_view{
+        width: 80%;
+        margin: 0.5em auto;
+    }
+    .new_view img{
+        width: 35%;
+    }
     .new_view p{
         font-size: 1.3rem;
     }

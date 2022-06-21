@@ -1,4 +1,4 @@
 <section class="formulaire">
-        <p>Are You Sure?</p>
-        <button type="submit"><a href="?page=articles_list">Delete</a></button>
+        <p>Êtes vous sûr?</p>
+        <button type="submit"><a href="?page=articles_list" title="Effacer">Effacer</a></button>
 </section>

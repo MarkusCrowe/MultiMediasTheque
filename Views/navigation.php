@@ -8,9 +8,9 @@
         <p class="moon hide"><i class="fa-solid fa-moon "></i></p>
     </section>
     <ul>
-        <li><a href="#actu">Actualités</a></li>
-        <li><a href="#actus">Dernières Actualités</a></li>
-        <li><a href="#article">Objets Récents</a></li>
-        <li><a href="#forums">Forums Récents</a></li>
+        <li><a href="#actu" title="News">Actualités</a></li>
+        <li><a href="#actus" title="last News">Dernières Actualités</a></li>
+        <li><a href="#article" title="Article">Objets Récents</a></li>
+        <li><a href="#forums" title="Forum">Forums Récents</a></li>
     </ul>
 </nav>
