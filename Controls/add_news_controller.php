@@ -4,6 +4,7 @@
     
     // ON recupere les donnée des images choisies pour les inserer dans la base de donnée avec un nom, des textes et leur chemins
     if(isset($_POST["submit"])){
+
         $dataImg = [
             "img_link_1" => "Assets/Images/Upload/" . $_FILES["upload_1"]["name"],
             "img_link_2" => "Assets/Images/Upload/" . $_FILES["upload_2"]["name"],
@@ -28,6 +29,7 @@
             "Paragraphe_2" => $_POST["paragraphe_2"],
             "Paragraphe_3" => $_POST["paragraphe_3"],
         ];
+
 
         move_uploaded_file($dataImg["img_file_1"],$dataImg["img_link_1"] );
         move_uploaded_file($dataImg["img_file_2"],$dataImg["img_link_2"] );

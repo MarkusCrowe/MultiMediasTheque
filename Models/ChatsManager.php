@@ -41,5 +41,23 @@ class ChatsManager{
         $query -> closeCursor();
         return $postChatroom;
     }
+
+    public function selectChatroomJoin($Id){
+        $query = $this->bddPDO->prepare("SELECT Chatrooms.Id, Chats.* FROM Chatrooms INNER JOIN chats ON Chatrooms.Id = Chats.Chatroom_id WHERE Chatrooms.Id = :id" );
+
+        $query -> bindValue(":id", $Id);
+        $query-> execute();
+
+        $query->setFetchMode(PDO::FETCH_CLASS  | PDO::FETCH_PROPS_LATE, "Chats" );
+        $postChatroom = $query->fetchAll();
+
+        // var_dump($postChatroom);
+        // die;
+
+        $query -> closeCursor();
+        return $postChatroom;
+
+
+    }
 }
 ?>

@@ -1,5 +1,5 @@
 <section class="chats">
-    <?php foreach ($Post_manager->selectChatroomsId($_GET["Id"]) as $PostManager) : ?>
+    <?php foreach ($Post_manager->selectChatroomJoin($_GET["Id"]) as $PostManager) : ?>
         <article class="chat">
             <div>
                 <p><?= ($PostManager->getPseudo()) ?></p>
@@ -8,6 +8,20 @@
             <p><?= ($PostManager->getContent()) ?></p>
         </article>
     <?php endforeach ?>
+    
+    
+    
+    
+    
+    <!-- <?php foreach ($Post_manager->selectChatroomsId($_GET["Id"]) as $PostManager) : ?> -->
+        <!-- <article class="chat">
+            <div>
+                <p><?= ($PostManager->getPseudo()) ?></p>
+                <p><?= ($PostManager->getDate()) ?></p>
+            </div>         
+            <p><?= ($PostManager->getContent()) ?></p>
+        </article>
+    <?php endforeach ?> -->
     <?php if(empty($_SESSION)){ ?>
         <p>Tu dois être connecter pour poster des messages !</p>
     <?php }; ?>

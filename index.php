@@ -19,4 +19,3 @@ require "Private/routing.php";
 require "Views/layout.php";
 ?>
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio eius ipsum aspernatur adipisci suscipit. Esse id alias provident placeat a tenetur eius cumque eligendi, modi molestiae omnis unde quia quas ab laboriosam, earum, blanditiis debitis ut exercitationem dolores delectus mollitia.

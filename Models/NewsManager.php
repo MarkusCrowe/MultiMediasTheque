@@ -91,5 +91,57 @@
             "Id" => $Id
         ]);
         }
+
+
+        public function verifImage($Images, $ImagesExtensions) {
+
+            $tab_validator = [];
+            $errors = [];
+            $ImagesExtensions = [
+                'png'   => 'image/png',
+                'jpe'   => 'image/jpeg',
+                'jpeg'  => 'image/jpeg',
+                'jpg'   => 'image/jpeg',
+                'gif'   => 'image/gif',
+                'bmp'   => 'image/bmp',
+                'ico'   => 'image/vnd.microsoft.icon',
+                'tiff'  => 'image/tiff',
+                'tif'   => 'image/tiff',
+                'svg'   => 'image/svg+xml',
+                'svgz'  => 'image/svg+xml',
+            ];
+    
+            foreach($Images as $image) {
+    
+                $tab_validator[$image] = false;
+    
+                if(isset($_FILES[$image]) && !empty($_FILES[$image]['name'])) {
+                    if ($_FILES[$image]["error"] === UPLOAD_ERR_OK) {
+                        $tmpName = $_FILES[$image]["tmp_name"];
+                        // On récupère l'extension du fichier pour vérifier si elle est dans "$fileExtensions"
+                        $tmpNameArray = explode(".", $_FILES[$image]["name"]);
+                        $tmpExt = end($tmpNameArray);
+                        if(in_array(strtolower($tmpExt), $ImagesExtensions)) {
+                            // Détecte le type de contenu d'un fichier.
+                            // On vérifie le contenu de fichier, pour voir s'il appartient aux MIMES autorisés.
+                            if(mime_content_type($tmpName) != $this->mimes[$tmpExt]) {
+                                // Risque d'attaque : Le contenu du ficher qui ne correspond pas à son extension
+                                $errors[] = "Une erreur a eu lieu au moment du téléchargement du fichier !";
+                            } else {
+                                $tab_validator[$image] = true;
+                            }
+                        } else {
+                            $errors[] = "Ce type de fichier n'est pas autorisé !";
+                        }
+                    } else if($_FILES[$image]["error"] == UPLOAD_ERR_INI_SIZE || $_FILES[$image]["error"] == UPLOAD_ERR_FORM_SIZE) {
+                        //fichier trop volumineux
+                        $errors[] = "Le fichier est trop volumineux";
+                    } else {
+                        $errors[] = "Une erreur a eu lieu au moment du téléchargement du fichier !";
+                    }
+                }
+            }
+            return $tab_validator;
+        }
     }
 ?>

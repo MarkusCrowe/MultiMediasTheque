@@ -3,7 +3,6 @@
     $bddPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $Edits = new UsersManager($bddPDO);
     
-    // $user = $Edits -> selectOneUser((int) $_GET["Id"]);
     $user = $Edits -> selectOneUser((int) $_SESSION["CurrentUser"]["Id"]);
     
     $editUser = $Edits -> updateUser($user);

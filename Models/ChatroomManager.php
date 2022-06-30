@@ -40,6 +40,24 @@ class ChatroomsManager{
         return $chatroomCategorie;
     }
 
+    public function selectCategorieJoin($Id){
+        $query = $this->bddPDO->prepare("SELECT Categories.Id, Chatrooms.Chatroom_name, Chatrooms.Id FROM Categories INNER JOIN Chatrooms ON Categories.Id = Chatrooms.Categorie_id WHERE Categories.Id = :id" );
+
+        $query -> bindValue(":id", $Id);
+        $query-> execute();
+
+        $query->setFetchMode(PDO::FETCH_CLASS  | PDO::FETCH_PROPS_LATE, "Chatroom" );
+        $chatroomCategorie = $query->fetchAll();
+
+        // var_dump($chatroomCategorie);
+        // die;
+
+        $query -> closeCursor();
+        return $chatroomCategorie;
+
+
+    }
+
     public function selectFiveChatrooms(){
         $query = $this->bddPDO->query("SELECT * FROM Chatrooms ORDER BY Id DESC LIMIT 5");
     
