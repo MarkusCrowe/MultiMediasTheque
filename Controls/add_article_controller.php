@@ -1,7 +1,7 @@
 <?php
     $bddPDO = new PDO('sqlite:Private/DataBase/Project_Database.db');
     $bddPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
+    $manager = new NewsManager($bddPDO);
     // ON recupere les donnée de l'image choisie pour l'inserer dans la base de donnée avec un nom, un résume et son chemin
     if(isset($_POST["submit"])){
 
@@ -39,23 +39,23 @@
             // On vérifie le contenu de fichier, pour voir s'il appartient aux MIMES autorisés.
             if(mime_content_type($tmpName) != $mimes[$tmpExt]) {
                 // Risque d'attaque : Le contenu du ficher qui ne correspond pas à son extension
-                echo "Ce n'est pas une Image!";
+                echo "<p>Ce n'est pas une Image!</p>";
                 die;
             }
         }else{
             echo "Ce n'est pas une Image!";
             die;
         }
-// var_dump($tmpName); 
-// echo "</br>";
-// var_dump($tmpNameArray);
-// echo "</br>";
-// var_dump($tmpExt);
-// echo "</br>";
-// var_dump(mime_content_type($tmpName));
-// echo "</br>";
-// var_dump($mimes[$tmpExt]);
-// die;
+        // var_dump($tmpName); 
+        // echo "</br>";
+        // var_dump($tmpNameArray);
+        // echo "</br>";
+        // var_dump($tmpExt);
+        // echo "</br>";
+        // var_dump(mime_content_type($tmpName));
+        // echo "</br>";
+        // var_dump($mimes[$tmpExt]);
+        // die;
 
         $dataImg = [
             "img_link" => "Assets/Images/Upload/" . $_FILES["upload"]["name"],

@@ -48,6 +48,37 @@
 
         public function updateArticle($new){     
             if( isset( $_POST["title"], $_POST["resume"])){
+
+                $extentions = ["jpg", "png", "jpeg", "gif"];
+                $mimes = [
+                    'png'   => 'image/png',
+                    'jpeg'  => 'image/jpeg',
+                    'jpg'   => 'image/jpeg',
+                    'gif'   => 'image/gif',
+                    'bmp'   => 'image/bmp',
+                    'ico'   => 'image/vnd.microsoft.icon',
+                    'tiff'  => 'image/tiff',
+                    'tif'   => 'image/tiff',
+                    'svg'   => 'image/svg+xml',
+                    'svgz'  => 'image/svg+xml',
+                ];
+
+                $tmpName = $_FILES["upload"]["tmp_name"];
+                $tmpNameArray = explode(".", $_FILES["upload"]["name"]);
+                $tmpExt = end($tmpNameArray);
+                if(in_array(strtolower($tmpExt), $extentions)) {
+                    // Détecte le type de contenu d'un fichier.
+                    // On vérifie le contenu de fichier, pour voir s'il appartient aux MIMES autorisés.
+                    if(mime_content_type($tmpName) != $mimes[$tmpExt]) {
+                        // Risque d'attaque : Le contenu du ficher qui ne correspond pas à son extension
+                        echo "Ce n'est pas une Image!";
+                        die;
+                    }
+                }else{
+                    echo "Ce n'est pas une Image!";
+                    die;
+                }
+
                 $query = $this->bddPDO-> prepare("UPDATE Articles SET Title=:Title, Resume=:Resume, Image_name=:Image_name, Image_path=:Image_path WHERE Id = :Id");
                 if( isset( $_POST["title"], $_POST["resume"])){
                     $new->setTitle($_POST["title"]);
@@ -55,6 +86,7 @@
                     $new->setImage_name(uniqid());
                     $new->setImage_path("Assets/Images/Upload/" . $_FILES["upload"]["name"]);
                 }
+
                 $query -> execute([
                     "Title" => $_POST["title"],
                     "Resume" => $_POST["resume"],
@@ -62,6 +94,7 @@
                     "Image_path" => "Assets/Images/Upload/" . $_FILES["upload"]["name"],
                     "Id" => $_GET["Id"]
                 ]);
+
                 move_uploaded_file($_FILES["upload"]["tmp_name"], "Assets/Images/Upload/" . $_FILES["upload"]["name"]);
                 return $new;
             }          

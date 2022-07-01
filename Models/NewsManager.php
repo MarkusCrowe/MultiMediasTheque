@@ -48,6 +48,59 @@
 
         public function updateNews($new){     
             if( isset( $_POST["Titre_article"], $_POST["introduction"], $_POST["conclusion"], $_POST["paragraphe_1"], $_POST["paragraphe_2"], $_POST["paragraphe_3"])){
+                $extentions = ["jpg", "png", "jpeg", "gif"];
+                $mimes = [
+                    'png'   => 'image/png',
+                    'jpeg'  => 'image/jpeg',
+                    'jpg'   => 'image/jpeg',
+                    'gif'   => 'image/gif',
+                    'bmp'   => 'image/bmp',
+                    'ico'   => 'image/vnd.microsoft.icon',
+                    'tiff'  => 'image/tiff',
+                    'tif'   => 'image/tiff',
+                    'svg'   => 'image/svg+xml',
+                    'svgz'  => 'image/svg+xml',
+                ];
+                $tmpName = $_FILES["upload_1"]["tmp_name"];
+                $tmpNameArray = explode(".", $_FILES["upload_1"]["name"]);
+                $tmpExt = end($tmpNameArray);
+                if(in_array(strtolower($tmpExt), $extentions)) {
+                    // Détecte le type de contenu d'un fichier.
+                    // On vérifie le contenu de fichier, pour voir s'il appartient aux MIMES autorisés.
+                    if(mime_content_type($tmpName) != $mimes[$tmpExt]) {
+                        // Risque d'attaque : Le contenu du ficher qui ne correspond pas à son extension
+                        echo "Ce n'est pas une Image!";
+                        die;
+                    }
+                }else{
+                    echo "Ce n'est pas une Image!";
+                    die;
+                }
+                $tmpName = $_FILES["upload_2"]["tmp_name"];
+                $tmpNameArray = explode(".", $_FILES["upload_2"]["name"]);
+                $tmpExt = end($tmpNameArray);
+                if(in_array(strtolower($tmpExt), $extentions)) {
+                    if(mime_content_type($tmpName) != $mimes[$tmpExt]) {
+                        echo "Ce n'est pas une Image!";
+                        die;
+                    }
+                }else{
+                    echo "Ce n'est pas une Image!";
+                    die;
+                }
+                $tmpName = $_FILES["upload_3"]["tmp_name"];
+                $tmpNameArray = explode(".", $_FILES["upload_3"]["name"]);
+                $tmpExt = end($tmpNameArray);
+                if(in_array(strtolower($tmpExt), $extentions)) {
+                    if(mime_content_type($tmpName) != $mimes[$tmpExt]) {
+                        echo "Ce n'est pas une Image!";
+                        die;
+                    }
+                }else{
+                    echo "Ce n'est pas une Image!";
+                    die;
+                }
+
                 $query = $this->bddPDO-> prepare("UPDATE News SET Title=:Title, Introduction=:Introduction, Conclusion=:Conclusion, Paragraphe_1=:Paragraphe_1, Paragraphe_2=:Paragraphe_2, Paragraphe_3=:Paragraphe_3, Image_1_name=:Image_1_name, Image_2_name=:Image_2_name, Image_3_name=:Image_3_name, Image_1_path=:Image_1_path, Image_2_path=:Image_2_path, Image_3_path=:Image_3_path WHERE Id = :Id");
                 if( isset( $_POST["Titre_article"], $_POST["introduction"], $_POST["conclusion"], $_POST["paragraphe_1"], $_POST["paragraphe_2"], $_POST["paragraphe_3"])){
                     $new->setTitle($_POST["Titre_article"]);
@@ -63,6 +116,7 @@
                     $new->setImage_2_path("Assets/Images/Upload/" . $_FILES["upload_2"]["name"]);
                     $new->setImage_3_path("Assets/Images/Upload/" . $_FILES["upload_3"]["name"]);
                 }
+
                 $query -> execute([
                     "Title" => $_POST["Titre_article"],
                     "Introduction" => $_POST["introduction"],
@@ -78,6 +132,7 @@
                     "Image_3_path" => "Assets/Images/Upload/" . $_FILES["upload_3"]["name"],
                     "Id" => $_GET["Id"]
                 ]);
+
                 move_uploaded_file($_FILES["upload_1"]["tmp_name"], "Assets/Images/Upload/" . $_FILES["upload_1"]["name"]);
                 move_uploaded_file($_FILES["upload_2"]["tmp_name"], "Assets/Images/Upload/" . $_FILES["upload_2"]["name"]);
                 move_uploaded_file($_FILES["upload_3"]["tmp_name"], "Assets/Images/Upload/" . $_FILES["upload_3"]["name"]);
@@ -92,55 +147,30 @@
         ]);
         }
 
-
-        public function verifImage($Images, $ImagesExtensions) {
-
+        public function verifImageIntegrity($files, $extentions, $mimes) {
             $tab_validator = [];
-            $errors = [];
-            $ImagesExtensions = [
-                'png'   => 'image/png',
-                'jpe'   => 'image/jpeg',
-                'jpeg'  => 'image/jpeg',
-                'jpg'   => 'image/jpeg',
-                'gif'   => 'image/gif',
-                'bmp'   => 'image/bmp',
-                'ico'   => 'image/vnd.microsoft.icon',
-                'tiff'  => 'image/tiff',
-                'tif'   => 'image/tiff',
-                'svg'   => 'image/svg+xml',
-                'svgz'  => 'image/svg+xml',
-            ];
-    
-            foreach($Images as $image) {
-    
-                $tab_validator[$image] = false;
-    
-                if(isset($_FILES[$image]) && !empty($_FILES[$image]['name'])) {
-                    if ($_FILES[$image]["error"] === UPLOAD_ERR_OK) {
-                        $tmpName = $_FILES[$image]["tmp_name"];
-                        // On récupère l'extension du fichier pour vérifier si elle est dans "$fileExtensions"
-                        $tmpNameArray = explode(".", $_FILES[$image]["name"]);
-                        $tmpExt = end($tmpNameArray);
-                        if(in_array(strtolower($tmpExt), $ImagesExtensions)) {
-                            // Détecte le type de contenu d'un fichier.
-                            // On vérifie le contenu de fichier, pour voir s'il appartient aux MIMES autorisés.
-                            if(mime_content_type($tmpName) != $this->mimes[$tmpExt]) {
-                                // Risque d'attaque : Le contenu du ficher qui ne correspond pas à son extension
-                                $errors[] = "Une erreur a eu lieu au moment du téléchargement du fichier !";
-                            } else {
-                                $tab_validator[$image] = true;
-                            }
-                        } else {
-                            $errors[] = "Ce type de fichier n'est pas autorisé !";
+            // $errors = [];
+            foreach($files as $file) {  
+                $tab_validator[$file] = false;   
+                if(isset($_FILES[$file]) && !empty($_FILES[$file]['name'])) {  
+                    $tmpName = $_FILES[$file]["tmp_name"];
+                    $tmpNameArray = explode(".", $_FILES[$file]["name"]);
+                    $tmpExt = end($tmpNameArray);
+                    if(in_array(strtolower($tmpExt), $extentions)) {
+                        // Détecte le type de contenu d'un fichier.
+                        // On vérifie le contenu de fichier, pour voir s'il appartient aux MIMES autorisés.
+                        if(mime_content_type($tmpName) != $mimes[$tmpExt]) {
+                            // Risque d'attaque : Le contenu du ficher qui ne correspond pas à son extension
+                            $tab_validator[$file] = false;
+                        }else{ 
+                            $tab_validator[$file] = true; 
                         }
-                    } else if($_FILES[$image]["error"] == UPLOAD_ERR_INI_SIZE || $_FILES[$image]["error"] == UPLOAD_ERR_FORM_SIZE) {
-                        //fichier trop volumineux
-                        $errors[] = "Le fichier est trop volumineux";
-                    } else {
-                        $errors[] = "Une erreur a eu lieu au moment du téléchargement du fichier !";
+                    }else{
+                        $tab_validator[$file] = false;
                     }
+
                 }
-            }
+            }    
             return $tab_validator;
         }
     }
