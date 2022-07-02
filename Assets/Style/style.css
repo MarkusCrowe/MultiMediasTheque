@@ -20,7 +20,15 @@
     --menu-background: beige;
     --menu-color: black;
 }
-
+.error{
+    position: absolute;
+    top: -10em;
+    text-align: center;
+    width: 100%;
+    font-size: 2rem;
+    color: rgb(159, 0, 0);
+    background-color: orangered;
+}
 *{
     margin: 0;
     padding: 0;

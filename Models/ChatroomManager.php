@@ -49,13 +49,8 @@ class ChatroomsManager{
         $query->setFetchMode(PDO::FETCH_CLASS  | PDO::FETCH_PROPS_LATE, "Chatroom" );
         $chatroomCategorie = $query->fetchAll();
 
-        // var_dump($chatroomCategorie);
-        // die;
-
         $query -> closeCursor();
         return $chatroomCategorie;
-
-
     }
 
     public function selectFiveChatrooms(){

@@ -51,13 +51,8 @@ class ChatsManager{
         $query->setFetchMode(PDO::FETCH_CLASS  | PDO::FETCH_PROPS_LATE, "Chats" );
         $postChatroom = $query->fetchAll();
 
-        // var_dump($postChatroom);
-        // die;
-
         $query -> closeCursor();
         return $postChatroom;
-
-
     }
 }
 ?>

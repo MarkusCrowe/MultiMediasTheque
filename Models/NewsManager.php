@@ -69,11 +69,11 @@
                     // On vérifie le contenu de fichier, pour voir s'il appartient aux MIMES autorisés.
                     if(mime_content_type($tmpName) != $mimes[$tmpExt]) {
                         // Risque d'attaque : Le contenu du ficher qui ne correspond pas à son extension
-                        echo "Ce n'est pas une Image!";
+                        echo "<p class='error'>Ce n'est pas une Image!</p>";
                         die;
                     }
                 }else{
-                    echo "Ce n'est pas une Image!";
+                    echo "<p class='error'>Ce n'est pas une Image!</p>";
                     die;
                 }
                 $tmpName = $_FILES["upload_2"]["tmp_name"];
@@ -81,11 +81,11 @@
                 $tmpExt = end($tmpNameArray);
                 if(in_array(strtolower($tmpExt), $extentions)) {
                     if(mime_content_type($tmpName) != $mimes[$tmpExt]) {
-                        echo "Ce n'est pas une Image!";
+                        echo "<p class='error'>Ce n'est pas une Image!</p>";
                         die;
                     }
                 }else{
-                    echo "Ce n'est pas une Image!";
+                    echo "<p class='error'>Ce n'est pas une Image!</p>";
                     die;
                 }
                 $tmpName = $_FILES["upload_3"]["tmp_name"];
@@ -93,11 +93,11 @@
                 $tmpExt = end($tmpNameArray);
                 if(in_array(strtolower($tmpExt), $extentions)) {
                     if(mime_content_type($tmpName) != $mimes[$tmpExt]) {
-                        echo "Ce n'est pas une Image!";
+                        echo "<p class='error'>Ce n'est pas une Image!</p>";
                         die;
                     }
                 }else{
-                    echo "Ce n'est pas une Image!";
+                    echo "<p class='error'>Ce n'est pas une Image!</p>";
                     die;
                 }
 
@@ -149,7 +149,6 @@
 
         public function verifImageIntegrity($files, $extentions, $mimes) {
             $tab_validator = [];
-            // $errors = [];
             foreach($files as $file) {  
                 $tab_validator[$file] = false;   
                 if(isset($_FILES[$file]) && !empty($_FILES[$file]['name'])) {  
@@ -168,7 +167,6 @@
                     }else{
                         $tab_validator[$file] = false;
                     }
-
                 }
             }    
             return $tab_validator;

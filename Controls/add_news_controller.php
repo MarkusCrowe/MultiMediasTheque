@@ -6,13 +6,6 @@
     // ON recupere les donnée des images choisies pour les inserer dans la base de donnée avec un nom, des textes et leur chemins
     if(isset($_POST["submit"])){
 
-        $maxSize = 500000; //500ko
-        $fileSize = $_FILES["upload_1"]["size"];
-        if($fileSize > $maxSize){
-            echo "L'image est trop grosse 1!";
-            die;
-        }
-
         $extentions = ["jpg", "png", "jpeg", "gif"];
         $mimes = [
             'png'   => 'image/png',

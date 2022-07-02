@@ -63,24 +63,6 @@
             }
         }
 
-        // public function delete($id){
-        //         $query = $this->bddPDO-> prepare("DELETE FROM dbb WHERE id = :id");
-        //         $query->execute([
-        //             "id" => $id
-        //         ]);
-
-        // }
-
-        // public function existingPseudo($Pseudo){
-        //     $query = $this->bddPDO-> prepare("SELECT Pseudo FROM Users WHERE Pseudo = :Pseudo");
-        //     $query -> bindValue(":Pseudo", $Pseudo);
-        //     $query-> execute();
-        //     $query->setFetchMode(PDO::FETCH_CLASS  | PDO::FETCH_PROPS_LATE, "Users" );
-        //     $exist = $query->fetch();
-        //     $query -> closeCursor();
-        //     return $exist;
-        // }
-
         public function existingPassword($Pseudo){
             $query = $this->bddPDO-> prepare("SELECT Password FROM Users WHERE Pseudo = :Pseudo");
             $query -> bindValue(":Pseudo", $Pseudo);
@@ -91,18 +73,6 @@
             $query -> closeCursor();
             return $existPass;
         }
-
-        // public function existingPassword($Pseudo, $Password){
-        //     $query = $this->bddPDO-> prepare("SELECT Password FROM Users WHERE Pseudo = :Pseudo AND Password = :Password");
-        //     $query -> bindValue(":Pseudo", $Pseudo);
-        //     $query -> bindValue(":Password", $Password);
-
-        //     $query-> execute();
-        //     $query->setFetchMode(PDO::FETCH_CLASS  | PDO::FETCH_PROPS_LATE, "Users" );
-        //     $existPass = $query->fetch();
-        //     $query -> closeCursor();
-        //     return $existPass;
-        // }
 
         public function selectPseudo($Pseudo){
             $query = $this->bddPDO->prepare("SELECT * FROM Users WHERE Pseudo = :Pseudo");

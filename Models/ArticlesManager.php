@@ -71,11 +71,11 @@
                     // On vérifie le contenu de fichier, pour voir s'il appartient aux MIMES autorisés.
                     if(mime_content_type($tmpName) != $mimes[$tmpExt]) {
                         // Risque d'attaque : Le contenu du ficher qui ne correspond pas à son extension
-                        echo "Ce n'est pas une Image!";
+                        echo "<p class='error'>Ce n'est pas une Image!</p>";
                         die;
                     }
                 }else{
-                    echo "Ce n'est pas une Image!";
+                    echo "<p class='error'>Ce n'est pas une Image!</p>";
                     die;
                 }
 
@@ -86,7 +86,6 @@
                     $new->setImage_name(uniqid());
                     $new->setImage_path("Assets/Images/Upload/" . $_FILES["upload"]["name"]);
                 }
-
                 $query -> execute([
                     "Title" => $_POST["title"],
                     "Resume" => $_POST["resume"],
@@ -94,7 +93,6 @@
                     "Image_path" => "Assets/Images/Upload/" . $_FILES["upload"]["name"],
                     "Id" => $_GET["Id"]
                 ]);
-
                 move_uploaded_file($_FILES["upload"]["tmp_name"], "Assets/Images/Upload/" . $_FILES["upload"]["name"]);
                 return $new;
             }          
