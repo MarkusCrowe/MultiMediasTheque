@@ -24,7 +24,7 @@
         </ul>
     </article>
 
-    <h1 id="article"> - Objets Récents - </h1>
+    <h1 id="article"> - Sujets Récents - </h1>
     <article class="actus">
         <a href="?page=all_articles_list" class="all_actus" title="List Article">All</a>
         <ul>

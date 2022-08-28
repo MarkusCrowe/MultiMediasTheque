@@ -7,10 +7,10 @@
         <p class="sun"><i class="fa-solid fa-sun"></i></p>
         <p class="moon hide"><i class="fa-solid fa-moon "></i></p>
     </section>
-    <ul>
+    <!-- <ul>
         <li><a href="#actu" title="News">Actualités</a></li>
         <li><a href="#actus" title="last News">Dernières Actualités</a></li>
         <li><a href="#article" title="Article">Objets Récents</a></li>
         <li><a href="#forums" title="Forum">Forums Récents</a></li>
-    </ul>
+    </ul> -->
 </nav>

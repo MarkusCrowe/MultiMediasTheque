@@ -7,12 +7,4 @@
         <!-- <p> <?= $forums->getChatroom_name() ?></p> -->
         <a href="?page=forums_chats&Id=<?= $forums->getId(); ?>" title="forums"><?= ($forums->getChatroom_name()) ?></a>
     <?php endforeach ?>
-
-
-
-
-
-    <!-- <?php foreach ($forums_chatrooms->selectCategorieId($_GET["Id"]) as $forums) : ?>
-        <a href="?page=forums_chats&Id=<?= $forums->getId(); ?>" title="forums"><?= ($forums->getChatroom_name()) ?></a>
-    <?php endforeach ?> -->
 </section>

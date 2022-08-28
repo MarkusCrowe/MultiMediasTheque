@@ -55,12 +55,6 @@
                     'jpeg'  => 'image/jpeg',
                     'jpg'   => 'image/jpeg',
                     'gif'   => 'image/gif',
-                    'bmp'   => 'image/bmp',
-                    'ico'   => 'image/vnd.microsoft.icon',
-                    'tiff'  => 'image/tiff',
-                    'tif'   => 'image/tiff',
-                    'svg'   => 'image/svg+xml',
-                    'svgz'  => 'image/svg+xml',
                 ];
 
                 $tmpName = $_FILES["upload"]["tmp_name"];
@@ -73,28 +67,28 @@
                         // Risque d'attaque : Le contenu du ficher qui ne correspond pas à son extension
                         echo "<p class='error'>Ce n'est pas une Image!</p>";
                         die;
+                    }else{
+                        $query = $this->bddPDO-> prepare("UPDATE Articles SET Title=:Title, Resume=:Resume, Image_name=:Image_name, Image_path=:Image_path WHERE Id = :Id");
+                        if( isset( $_POST["title"], $_POST["resume"])){
+                            $new->setTitle($_POST["title"]);
+                            $new->setResume($_POST["resume"]);
+                            $new->setImage_name(uniqid());
+                            $new->setImage_path("Assets/Images/Upload/" . $_FILES["upload"]["name"]);
+                        }
+                        $query -> execute([
+                            "Title" => $_POST["title"],
+                            "Resume" => $_POST["resume"],
+                            "Image_name" => uniqid(),
+                            "Image_path" => "Assets/Images/Upload/" . $_FILES["upload"]["name"],
+                            "Id" => $_GET["Id"]
+                        ]);
+                        move_uploaded_file($_FILES["upload"]["tmp_name"], "Assets/Images/Upload/" . $_FILES["upload"]["name"]);
+                        return $new;
                     }
                 }else{
                     echo "<p class='error'>Ce n'est pas une Image!</p>";
                     die;
                 }
-
-                $query = $this->bddPDO-> prepare("UPDATE Articles SET Title=:Title, Resume=:Resume, Image_name=:Image_name, Image_path=:Image_path WHERE Id = :Id");
-                if( isset( $_POST["title"], $_POST["resume"])){
-                    $new->setTitle($_POST["title"]);
-                    $new->setResume($_POST["resume"]);
-                    $new->setImage_name(uniqid());
-                    $new->setImage_path("Assets/Images/Upload/" . $_FILES["upload"]["name"]);
-                }
-                $query -> execute([
-                    "Title" => $_POST["title"],
-                    "Resume" => $_POST["resume"],
-                    "Image_name" => uniqid(),
-                    "Image_path" => "Assets/Images/Upload/" . $_FILES["upload"]["name"],
-                    "Id" => $_GET["Id"]
-                ]);
-                move_uploaded_file($_FILES["upload"]["tmp_name"], "Assets/Images/Upload/" . $_FILES["upload"]["name"]);
-                return $new;
             }          
         }
 

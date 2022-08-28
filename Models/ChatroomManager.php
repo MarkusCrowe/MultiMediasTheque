@@ -27,19 +27,6 @@ class ChatroomsManager{
         return $ListChatrooms;
     }
 
-    public function selectCategorieId($categorie_id){
-        $query = $this->bddPDO->prepare("SELECT * FROM Chatrooms WHERE Categorie_id=:Categorie_id ");
-
-        $query -> bindValue(":Categorie_id", $categorie_id);
-        $query-> execute();
-
-        $query->setFetchMode(PDO::FETCH_CLASS  | PDO::FETCH_PROPS_LATE, "Chatroom" );
-        $chatroomCategorie = $query->fetchAll();
-
-        $query -> closeCursor();
-        return $chatroomCategorie;
-    }
-
     public function selectCategorieJoin($Id){
         $query = $this->bddPDO->prepare("SELECT Categories.Id, Chatrooms.Chatroom_name, Chatrooms.Id FROM Categories INNER JOIN Chatrooms ON Categories.Id = Chatrooms.Categorie_id WHERE Categories.Id = :id" );
 

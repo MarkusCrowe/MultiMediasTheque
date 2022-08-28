@@ -54,12 +54,6 @@
                     'jpeg'  => 'image/jpeg',
                     'jpg'   => 'image/jpeg',
                     'gif'   => 'image/gif',
-                    'bmp'   => 'image/bmp',
-                    'ico'   => 'image/vnd.microsoft.icon',
-                    'tiff'  => 'image/tiff',
-                    'tif'   => 'image/tiff',
-                    'svg'   => 'image/svg+xml',
-                    'svgz'  => 'image/svg+xml',
                 ];
                 $tmpName = $_FILES["upload_1"]["tmp_name"];
                 $tmpNameArray = explode(".", $_FILES["upload_1"]["name"]);
